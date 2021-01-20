@@ -8,6 +8,7 @@ $aLang = [
         'user' => 'Usuario',
         'password' => 'Contraseña',
         'login' => 'Iniciar Sesion',
+        'perfil' => 'Editar Perfil',
         'signup' => 'Registrarse',
 
         'title' => 'Programa',
@@ -37,4 +38,3 @@ $aLang = [
     ]
 ];
 ?>
-
