@@ -9,6 +9,7 @@ $controladores = [
     "login" => "controller/cLogin.php",
     "inicio" => "controller/cInicio.php",
     "perfil" => "controller/cPerfil.php"
+    
 ];
 
 $vistas = [

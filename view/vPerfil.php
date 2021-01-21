@@ -1,36 +1,42 @@
+<?php
+if(isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){
+    $usuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+}
+?>
+
 <header>
     <h1>Editar</h1>
+    
+    <div class="buttons-header-inicio">
+    
+        <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
+        </form>
+    </div>
+    
 </header>
-<main class="flex-container-align-item-center">
-
-        <form action="<?php $_SERVER['PHP_SELF'] ?>" method="post">
-
-        <div class="form-group">
-            <label for="CodUsuario" style="display: inline-block;">Usuario</label>
-            <input class="form-control" disabled type="text" name="CodUsuario" id="CodUsuario" aria-describedby="CodUsuario" value="<?php echo $aDatosUsuarioVista['codigo']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="descUsuario">Descripción</label>
-            <input class="form-control" type="text" name="descUsuario"  id="descUsuario" aria-describedby="CodUsuario" value="<?php echo $aDatosUsuarioVista['descUsuario']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="sel1">Perfil</label>
-            <select disabled name="perfil" class="form-control" id="sel1">
-                <option value="<?php echo $aDatosUsuarioVista['perfil']; ?>"><?php echo $aDatosUsuarioVista['perfil']; ?></option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label for="numConUsuario">Veces conectado</label>
-            <input class="form-control" disabled type="text" name="numConUsuario" id="numConUsuario" aria-describedby="numConUsuario" value="<?php echo $aDatosUsuarioVista['contadorAccesos']; ?>">
-        </div>
-        <div class="form-group">
-            <label for="ultimaConexion">Conexión anterior</label>
-            <input class="form-control" disabled type="text" name="ultimaConexion" id="ultimaConexion" aria-describedby="ultimaConexion" value="<?php echo $aDatosUsuarioVista['ultimaConexion']; ?>">
-        </div>
-
-        <input type="submit" name="guardar" style="width: 100px;" class="button" value="Guardar">
-        <input type="submit" name="volver" style="width: 100px;" class="button" value="Volver">
-        <input type="submit" name="borrar" style="width: 120px;" class="button" value="Borrar cuenta">
-
-    </form>
+           
+<main class="main-container-inicio" class="flex-container-align-item-center">
+    <article>
+        <label for="CodUsuario" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['user']; ?></label>
+        <input class="required" disabled type="text" id="CodUsuario" name="CodUsuario" value="<?php echo $usuarioActual->getCodUsuario()?>">
+        <br>
+        <label for="DescUsuario" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['description']; ?></label>
+        <input class="required" type="text" id="DescUsuario" name="DescUsuario" value="<?php echo $usuarioActual->getDescUsuario()?>">
+        <br>
+        <label for="TipoUsuario" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['typeUser']; ?></label>
+        <input class="required" disabled type="text" id="TipoUsuario" name="TipoUsuario" value="<?php echo $usuarioActual->getPerfil()?>">
+        <br>
+        <label for="NumConexiones" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['numConn']; ?></label>
+        <input class="required" disabled type="text" id="NumConexiones" name="NumConexiones" value="<?php echo $usuarioActual->getNumConexiones()?>">
+        <br>
+        <label for="FechaUltimaConexion" class="labelEditar"><?php echo $aLang[$_COOKIE['idioma']]['lastConn']; ?></label>
+        <input class="required" disabled type="text" id="FechaUltimaConexion" name="FechaUltimaConexion" value="<?php echo date('d/m/Y H:i:s',$usuarioActual->getFechaHoraUltimaConexion())?>">
+    </article>
+        
+        <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <button class="button" type="submit" name="guardar"><?php echo $aLang[$_COOKIE['idioma']]['saveB']; ?></button>
+            <button class="button" type="submit" name="volver"><?php echo $aLang[$_COOKIE['idioma']]['returnB']; ?></button>
+        </form>
+        
 </main>

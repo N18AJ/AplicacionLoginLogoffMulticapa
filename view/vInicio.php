@@ -1,11 +1,10 @@
 <header>
-    <h1>Inicio</h1>
+    <h1 class="inicioSesion">Inicio</h1>
     <div class="buttons-header-inicio">
 
-        <a href="vPerfil.php"><button class="button" name="EditarPefil"> <?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button></a>
-   
         <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
+            <button class="logout" type="submit" name='editarPerfil'><?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button>
         </form>
     </div>
 

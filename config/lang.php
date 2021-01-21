@@ -5,10 +5,14 @@ if(isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){
 
 $aLang = [
     'es'=> [
-        'user' => 'Usuario',
+        'user' => 'Nombre del Usuario:',
+        'description' => 'Descripción del Usuario:',
+        'typeUser' => 'Tipo de Usuario:',
+        'numConn' => 'Número de conexiones:',
+        'lastConn' => 'Última conexión:',
+        
         'password' => 'Contraseña',
         'login' => 'Iniciar Sesion',
-        'perfil' => 'Editar Perfil',
         'signup' => 'Registrarse',
 
         'title' => 'Programa',
@@ -17,12 +21,21 @@ $aLang = [
         'numConnections' => 'Se ha conectado '.(isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null).' veces',
         'numConnectionsWelcome' => 'Esta es la primera vez que se conecta',  
         'lastConnection' => 'Ultima conexion: '.(isset($usuarioActual) ? date('d/m/Y H:i:s',$usuarioActual->getFechaHoraUltimaConexion()) : null),
+        
         'details' => 'Detalle',
-        'editProfile' => 'Editar Perfil'
+        'editProfile' => 'Editar Perfil',
+        
+        'saveB' => 'Guardar',
+        'returnB' => 'Volver'
     ],
 
     'en' => [
-        'user' => 'User',
+        'user' => 'Username:',
+        'description' => 'User Description:',
+        'typeUser' => 'User Type:',
+        'numConn' => 'Number of connections:',
+        'lastConn' => 'Last connection:',
+        
         'password' => 'Password',
         'login' => 'Login',
         'signup' => 'Sign Up',
@@ -33,8 +46,15 @@ $aLang = [
         'numConnections' => 'You have connected '.(isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null).' times',
         'numConnectionsWelcome' => 'This is the first time you connect',  
         'lastConnection' => 'Last connection: '.(isset($usuarioActual) ? date('d/m/Y H:i:s',$usuarioActual->getFechaHoraUltimaConexion()) : null),
-        'details' => 'Detail',
-        'editProfile' => 'Edit Profile' 
+        
+        
+        'details' => 'Detalle',
+        'editProfile' => 'Edit Profile',
+        
+        
+        'saveB' => 'Save',
+        'returnB' => 'Return'
+         
     ]
 ];
 ?>

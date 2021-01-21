@@ -23,7 +23,6 @@
 
         <div>
             <button class="button" type="submit" name="IniciarSesion"><?php echo $aLang[$_COOKIE['idioma']]['login']; ?></button>
-
         </div>
 
     </form>
