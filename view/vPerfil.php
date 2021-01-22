@@ -35,8 +35,8 @@ if(isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){
     </article>
         
         <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <button class="button" type="submit" name="guardar"><?php echo $aLang[$_COOKIE['idioma']]['saveB']; ?></button>
-            <button class="button" type="submit" name="volver"><?php echo $aLang[$_COOKIE['idioma']]['returnB']; ?></button>
+            <button class="button" type="submit" name="guardarCambio"><?php echo $aLang[$_COOKIE['idioma']]['saveB']; ?></button>
+            <button class="button" type="submit" name="volverInicio"><?php echo $aLang[$_COOKIE['idioma']]['returnB']; ?></button>
         </form>
         
 </main>
