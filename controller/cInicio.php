@@ -14,6 +14,14 @@ if (isset($_REQUEST['cerrarSesion'])) { // si se ha pulsado el boton de Cerrar S
     header("Location: index.php"); // redirige al login
     exit;
 }
+
+if (isset($_REQUEST['editarPerfil'])) { // si se ha pulsado el boton de registrarse
+    $_SESSION['paginaEnCurso'] = $controladores['perfil']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
+    
+    header('Location: index.php');
+    exit;
+}
+
 $oUsuarioControlador = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
 
 $numConexiones = $oUsuarioControlador->getNumConexiones(); // variable que tiene el numero de conexiones sacado de la base de datos

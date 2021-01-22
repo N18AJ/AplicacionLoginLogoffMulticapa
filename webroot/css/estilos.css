@@ -3,15 +3,13 @@
     Fecha de modificacion.- 2020/09/29
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Bangers&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Caveat&display=swap");
 @font-face {
-    font-family: "Bangers";
-    src: url(../fonts/Bangers-Regular.ttf);
+    font-family: "Cavea";
 }
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
 @font-face {
-    font-family: "Roboto";
-    src: url(../fonts/Roboto-Medium.ttf);
+    font-family: "Coda Caption";
 }
 * {
     box-sizing: border-box;
@@ -33,12 +31,12 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     border-radius: 10px;
-    background-color: rgb(255 137 0 / 0.74);
-    height: 50px;
-    font-family: "Bangers";
+    height: 55px;
+    font-family: "Coda Caption", cursive;
+    border-bottom: 2px solid black;
+    padding-bottom: 5px;
 }
 
 header > h1 {
@@ -56,19 +54,19 @@ header > h1 {
 main {
     min-height: calc(100vh - 140px);
     margin: 20px; 
-    font-family: "Roboto";
+   font-family: 'Caveat', cursive;
 }
 /* -------- FOOTER -------- */
 
 footer {
     height: 50px;
     text-align: center;
-    background-color: #908c8c75;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    font-family: "Bangers";
+    font-family: "Coda Caption", cursive;
     width: 100vw;
+    border-top: 2px solid black;
 }
 footer > address {
     font-size: 20px;
@@ -85,23 +83,15 @@ footer a{
     align-items: center;
     justify-content: space-around;
 }
-.button{
-    font-size: 1.2rem;
-    background-color: #8bd6fb;
-    border-radius: 20px;
-    border: 2px solid #6bb3ff;
-}
-
 
 .required{
-    background-color: #ffcb8e;
+    background-color: #F4F4F4;
 }
 
 form[name="login"],form[name="singup"],form[name="editarPerfil"]{
     display: flex;
     flex-flow: column;
     align-items: center;
-    border: 6px solid #ffa842;
     padding: 40px;
     border-radius: 50px;
 }
@@ -125,7 +115,7 @@ input[name="IniciarSesion"]{
 form[name="login"] input,form[name="singup"] input,form[name="editarPerfil"] input{
     width:160px;
     border: none;
-    border-bottom: 3px solid #545454;
+    border-bottom: 3px solid #616161;
     border-radius: 5px;
     margin: auto;
 }
@@ -140,12 +130,16 @@ input[readonly=""]{
 
 .logout{
     font-size: 1.2rem;
-    background-color: white;
     border-radius: 7px;
     color: #616161;
     font-weight: bold;
     border: 4px solid white;
     margin-right: 6px;
+   font-family: "Coda Caption", cursive;
+}
+.logout:hover{
+    background-color: #616161;
+    color: #ffffff;
 }
 
 .fixed{
@@ -195,12 +189,17 @@ form[name="formularioIdioma"]{
 .buttons-header-inicio #fotoPerfil{
     margin: 0 !important;
 }
-.button-inicio{
+
+.button{
     font-size: 1.2rem;
-    background-color: white;
     border-radius: 7px;
     color: #616161;
     font-weight: bold;
     border: 4px solid white;
     margin-right: 6px;
+    font-family: "Coda Caption", cursive;
+}
+.button:hover{
+    background-color: #616161;
+    color: #ffffff;
 }
