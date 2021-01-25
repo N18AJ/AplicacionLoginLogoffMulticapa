@@ -1,3 +1,5 @@
+
+Deprecated: array_key_exists(): Using array_key_exists() on objects is deprecated. Use isset() or property_exists() instead in D:\phpDoc\phpDocumentor-2.8.5\vendor\twig\twig\lib\Twig\Template.php on line 527
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +20,7 @@
 
         <footer class="fixed">
             <a href="http://daw212.ieslossauces.es/" target="_blank"> <img src="webroot/media/images/one.png" alt="oneandone icon" width="40"></a>
-            <address>  <a href="../../../../index.html">&copy; 2020-2021 Nerea Álvarez Justel</a> <a href="doc/index.html" target="_blank"> <img src="webroot/media/images/phpDoc.png" alt="phpDoc" width="25"></a></address>
+            <address>  <a href="../../../../index.html">&copy; 2020-2021 Nerea Álvarez Justel</a> <a href="" target="_blank"> <img src="webroot/media/images/phpDoc.png" alt="phpDoc" width="25"></a></address>
             <a href="https://github.com/N18AJ/AplicacionLoginLogoffMulticapa" target="_blank"><img class="github" width="40" src="webroot/media/github.png" ></a>
         </footer>
     </body>
