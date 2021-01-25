@@ -1,10 +1,22 @@
 <?php
+
 /**
- *   @author: Javier Nieto Lorenzo
- *   @since: 02/12/2020
- *   Programa
-*/
-if(!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){ // si no se ha logueado le usuario
+ * @author: Nerea Álvarez Justel
+ * @since: 24/01/2020
+ * 
+ * cInicio
+ * 
+ * Llegaremos desde cLogin
+ * 
+ * cerrarSesion nos lleva a cLogin
+ * 
+ * editProfile nos lleva a cMiCuenta
+ * 
+ * deleteAccount nos lleva a CBorrarCuenta
+ * 
+ */
+
+if (!isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])) { // si no se ha logueado le usuario
     header('Location: index.php'); // redirige al login
     exit;
 }
@@ -14,22 +26,27 @@ if (isset($_REQUEST['cerrarSesion'])) { // si se ha pulsado el boton de Cerrar S
     header("Location: index.php"); // redirige al login
     exit;
 }
-
-if (isset($_REQUEST['editarPerfil'])) { // si se ha pulsado el boton de registrarse
-    $_SESSION['paginaEnCurso'] = $controladores['perfil']; // guardamos en la variable de sesion 'pagina' la ruta del controlador del registro
-    
-    header('Location: index.php');
+if (isset($_REQUEST['editProfile'])) { // si se ha pulsado el boton de Cerrar Sesion
+    $_SESSION['paginaEnCurso'] = $controladores['editProfile'];
+    header("Location: index.php"); // redirige al login
     exit;
 }
 
-$oUsuarioControlador = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+if (isset($_REQUEST['deleteAccount'])) { // si se ha pulsado el boton de Cerrar Sesion
+    $_SESSION['paginaEnCurso'] = $controladores['deleteAccount'];
+    header("Location: index.php"); // redirige al login
+    exit;
+}
 
-$numConexiones = $oUsuarioControlador->getNumConexiones(); // variable que tiene el numero de conexiones sacado de la base de datos
-$descUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getDescUsuario(); // variable que tiene la descripcion del usuario sacado de la base de datos
-$ultimaConexion = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getFechaHoraUltimaConexion();
-$imagenUsuario = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->getImagenPerfil();
+//Muestra de los valores
+$usuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+$CodUser = $usuarioActual->getCodUsuario();
+$DescUser = $usuarioActual->getDescUsuario();
+$Profile = $usuarioActual->getPerfil();
+$ConexNumber = $usuarioActual->getNumConexiones();
+$LastDateConex = date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion());
 
-$vista = $vistas['inicio'];
-require_once $vistas['layout'];
+$vistaEnCurso = $vistas['inicio']; // guardamos en la variable vistaEnCurso la vista que queremos implementar
+require_once $vistas['layout']; //se incluye la vista que contiene la $vistaEnCurso
 
 ?>
