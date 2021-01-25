@@ -3,78 +3,85 @@
 /**
  * Class Usuario
  *
- * Clase que se va a utilizar para crear un objeto de la clase Usuario
+ * Clase utilizada para instanciar objetos Usuario
  * 
  * @author Nerea Álvarez Justel
- * @since 1.0
- * @copyright 21-01-2021
+ * @since Version 1.0
+ * @copyright 24-01-2021
  * @version 1.0
  */
 class Usuario {
-    
+
     /**
-     * Codigo del usuario 
+     * Código del usuario 
      * 
      * @var string 
+     * @access private
      */
     private $codUsuario;
-    
+
     /**
-     * Password del usuario 
+     * Contraseña del usuario 
      * 
-     * @var string  
+     * @var string 
+     * @access private
      */
     private $password;
-    
+
     /**
-     * Descripcion del usuario 
+     * Descripción del usuario 
      * 
      * @var string 
+     * @access private
      */
     private $descUsuario;
-    
+
     /**
-     * Numero de conexiones que ha realizado el usuario 
+     * Número de conexiones establecidas por el usuario 
      * 
      * @var int 
+     * @access private
      */
     private $numConexiones;
-    
+
     /**
-     * Ultima fecha y hora de la ultima conexion en formato timestamp 
+     * Fecha y hora de la última conexión con formato timestamp 
      * 
      * @var int 
+     * @access private
      */
     private $fechaHoraUltimaConexion;
-    
+
     /**
-     * Tipo de perfil del usuario (usuario, administrador) 
+     * Perfil del usuario (administrador o usuario)
      * 
      * @var string 
+     * @access private
      */
     private $perfil;
     
-    /**
+     /**
      * Datos de la imagen en formato binario de la base de datos
      * 
-     * @var string 
+     * @var string
+     * @access private 
      */
     private $imagenPerfil;
-    
+
     /**
      * Metodo magico __construct()
      * 
      * Metodo magico del constructor de la clase Usuario
      * 
-     * @param string $codUsuario codigo del usuario
-     * @param string $password password del usuario
-     * @param string $descUsuario descripcion del usuario
-     * @param int $numConexiones numero de conexiones del usuario
-     * @param int $fechaHoraUltimaConexion fecha y hora de la ultima conexion del usuario en formato timestamp
+     * @param string $codUsuario código del usuario
+     * @param string $password constraseña del usuario
+     * @param string $descUsuario descripción del usuario
+     * @param int $numConexiones número de conexiones del usuario
+     * @param int $fechaHoraUltimaConexion fecha y hora de la última conexion del usuario en formato timestamp
      * @param string $perfil tipo de perfil del usuario
      * @param string $imagenPerfil imagen de perfil del usuario imagen en formato binario de la base de datos
      */
-    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexion, $perfil, $imagenPerfil) {
+    function __construct($codUsuario, $password, $descUsuario, $numConexiones, $fechaHoraUltimaConexion, $perfil) {
         $this->codUsuario = $codUsuario;
         $this->password = $password;
         $this->descUsuario = $descUsuario;
@@ -83,74 +90,74 @@ class Usuario {
         $this->perfil = $perfil;
         $this->imagenPerfil = $imagenPerfil;
     }
-    
+
     /**
-     * Metodo getCodUsuario()
+     * Método getCodUsuario()
      * 
-     * Metodo que devuelve el codigo del usuario
+     * Método que devuelve el código del usuario
      * 
-     * @return string codigo del usuario
+     * @return string Código del usuario
      */
     function getCodUsuario() {
         return $this->codUsuario;
     }
 
     /**
-     * Metodo getPassword()
+     * Método getPassword()
      * 
-     * Metodo que devuelve el password del usuario
+     * Método que devuelve la contraseña del usuario
      * 
-     * @return string password del usuario
+     * @return string Contraseña del usuario
      */
     function getPassword() {
         return $this->password;
     }
 
     /**
-     * Metodo getDescUsuario()
+     * Método getDescUsuario()
      * 
-     * Metodo que que devuelve la descripcion del usuario
+     * Método que devuelve la descripción del usuario
      * 
-     * @return string descripcion del usuario
+     * @return string Descripción del usuario
      */
     function getDescUsuario() {
         return $this->descUsuario;
     }
 
     /**
-     * Metodo getNumConexiones()
+     * Método getNumConexiones()
      * 
-     * Metodo que devuelve el numero de conexiones del usuario
+     * Método que devuelve el número de conexiones establecidas del usuario
      * 
-     * @return int numero de conexiones del usuario
+     * @return int Número de conexiones establecidas del usuario
      */
     function getNumConexiones() {
         return $this->numConexiones;
     }
 
     /**
-     * Metodo getFechaHoraUltimaConexion()
+     * Método getFechaHoraUltimaConexion()
      * 
-     * Metodo que devuelve la fecha y hora de la ultima conexion del usuario en formato timestamp
+     * Método que devuelve la fecha y hora de la última conexión (formato timestamp) del usuario
      * 
-     * @return int ultima fecha y hora de la ultima conexion en formato timestamp
+     * @return int Fecha y hora de la última conexión (formato timestamp)
      */
     function getFechaHoraUltimaConexion() {
         return $this->fechaHoraUltimaConexion;
     }
 
     /**
-     * Metodo getPerfil()
+     * Método getPerfil()
      * 
-     * Metodo que devuelve el tipo de perfil del usuario
+     * Método que devuelve el perfil del usuario
      * 
-     * @return string tipo de perfil del usuario
+     * @return string Perfil del usuario
      */
     function getPerfil() {
         return $this->perfil;
     }
-
-    /**
+    
+     /**
      * Metodo getImagenPerfil()
      * 
      * Metodo que devuelve la imagen en formato binario de la base de datos
@@ -160,73 +167,73 @@ class Usuario {
     function getImagenPerfil() {
         return $this->imagenPerfil;
     }
-    
+
     /**
-     * Metodo setCodUsuario()
+     * Método setCodUsuario()
      * 
-     * Metodo que cambia el valor del atributo $codUsuario
+     * Método que cambia el valor del atributo $codUsuario
      * 
-     * @param string $codUsuario nuevo codigo del usuario
+     * @param string $codUsuario Nuevo código del usuario
      */
     function setCodUsuario($codUsuario) {
         $this->codUsuario = $codUsuario;
     }
 
     /**
-     * Metodo setPassword()
+     * Método setPassword()
      * 
-     * Metodo que cambia el valor del atributo $password
+     * Método que cambia el valor del atributo $password
      * 
-     * @param string $password nueva password del usuario
+     * @param string $password Nueva contraseña del usuario
      */
     function setPassword($password) {
         $this->password = $password;
     }
 
     /**
-     * Metodo setDescUsuario()
+     * Método setDescUsuario()
      * 
-     * Metodo que cambia el valor del atributo $descUsuario
+     * Método que cambia el valor del atributo $descUsuario
      * 
-     * @param string $descUsuario nueva descripcion del usuario
+     * @param string $descUsuario Nueva descripción del usuario
      */
     function setDescUsuario($descUsuario) {
         $this->descUsuario = $descUsuario;
     }
 
     /**
-     * Metodo setNumConexiones()
+     * Método setNumConexiones()
      * 
-     * Metodo que cambia el valor del atributo $numConexiones
+     * Método que cambia el valor del atributo $numConexiones
      * 
-     * @param int $numConexiones nuevo numero de conexiones del usuario
+     * @param int $numConexiones Nuevo número de conexiones establecidas del usuario
      */
     function setNumConexiones($numConexiones) {
         $this->numConexiones = $numConexiones;
     }
 
     /**
-     * Metodo setFechaHoraUltimaConexion()
+     * Método setFechaHoraUltimaConexion()
      * 
-     * Metodo que cambia el valor del atributo $fechaHoraUltimaConexion
+     * Método que cambia el valor del atributo $fechaHoraUltimaConexion
      * 
-     * @param int $fechaHoraUltimaConexion nueva fecha y hora en formato timestamp
+     * @param int $fechaHoraUltimaConexion Nueva última fecha de conexión en formato timestamp del usuario
      */
     function setFechaHoraUltimaConexion($fechaHoraUltimaConexion) {
         $this->fechaHoraUltimaConexion = $fechaHoraUltimaConexion;
     }
 
     /**
-     * Metodo setPerfil()
+     * Método setPerfil()
      * 
-     * Metodo que cambia el valor del atributo $perfil
+     * Método que cambia el valor del atributo $perfil
      * 
-     * @param string $perfil nuevo tipo de perfil
+     * @param string $perfil Nueva perfil del usuario
      */
     function setPerfil($perfil) {
         $this->perfil = $perfil;
     }
-
+    
     /**
      * Metodo setImagenPerfil()
      * 

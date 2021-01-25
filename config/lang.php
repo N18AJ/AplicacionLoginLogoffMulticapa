@@ -1,60 +1,80 @@
 <?php
-if(isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])){
+
+if (isset($_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'])) {
     $usuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
 }
 
 $aLang = [
-    'es'=> [
-        'user' => 'Nombre del Usuario:',
-        'description' => 'Descripción del Usuario:',
-        'typeUser' => 'Tipo de Usuario:',
-        'numConn' => 'Número de conexiones:',
-        'lastConn' => 'Última conexión:',
-        
+    //Idioma en ESPAÑOL
+    'es' => [
+        //Muestra de información
+        'user' => 'Usuario',
+        'description' => 'Descripción',
         'password' => 'Contraseña',
-        'login' => 'Iniciar Sesion',
-        'signup' => 'Registrarse',
-
-        'title' => 'Programa',
+        'confirmPassword' => 'Repite la contraseña',
+        'NumConex' => 'Número de conexiones',
+        'DateLastConex' => 'Fecha de la última conexión',
+        'typeUser' => 'Tipo de usuario',
+        
+        //Botones ENTRADA
+        'login' => 'Inicio Sesion',
+        'signup' => 'Registrate',
+        'edit' => 'Editar',
         'logoff' => 'Cerrar Sesion',
-        'welcome' => 'Bienvenido/a '.(isset($usuarioActual) ? $usuarioActual->getDescUsuario() : null),
-        'numConnections' => 'Se ha conectado '.(isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null).' veces',
-        'numConnectionsWelcome' => 'Esta es la primera vez que se conecta',  
-        'lastConnection' => 'Ultima conexion: '.(isset($usuarioActual) ? date('d/m/Y H:i:s',$usuarioActual->getFechaHoraUltimaConexion()) : null),
+        'delete'=> 'Borrar Cuenta',
         
-        'details' => 'Detalle',
-        'editProfile' => 'Editar Perfil',
+        //Titulos
+        'loginT' => 'App Logging Logout',
+        'startT'=> 'Inicio',
+        'signupT'=> 'Registro',
+        'editProfileT' => 'Editar Perfil',
+        'deleteT'=> 'Borrar Cuenta',
         
-        'saveB' => 'Guardar',
-        'returnB' => 'Volver'
+        //Muestra INICIO
+        'welcome' => 'Bienvenido/a ' . (isset($usuarioActual) ? $usuarioActual->getDescUsuario() : null),
+        'numConnections' => 'Se ha conectado ' . (isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null) . ' veces',
+        'numConnectionsWelcome' => 'Esta es la primera vez que se conecta',
+        'lastConnection' => 'Última conexión: ' . (isset($usuarioActual) ? date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion()) : null),
+        
+        //Botones movimiento
+        'acceptB'=>'Aceptar',
+        'cancelB' => 'Cancelar'
     ],
-
+    //Idioma en INGLÉS
     'en' => [
-        'user' => 'Username:',
-        'description' => 'User Description:',
-        'typeUser' => 'User Type:',
-        'numConn' => 'Number of connections:',
-        'lastConn' => 'Last connection:',
-        
+        //Muestra de información
+        'user' => 'User',
+        'description' => 'Description',
         'password' => 'Password',
+        'confirmPassword' => 'Repeat the password',
+        'NumConex' => 'Number of connections',
+        'DateLastConex' => 'Date of last connection',
+        'typeUser' => 'Type of user',
+        
+        //Botones ENTRADA
         'login' => 'Login',
-        'signup' => 'Sign Up',
-
-        'title' => 'Program',
+        'signup' => 'Sign up',
+        'edit' => 'Edit',
         'logoff' => 'Logoff',
-        'welcome' => 'Welcome '.(isset($usuarioActual) ? $usuarioActual->getDescUsuario() : null),
-        'numConnections' => 'You have connected '.(isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null).' times',
-        'numConnectionsWelcome' => 'This is the first time you connect',  
-        'lastConnection' => 'Last connection: '.(isset($usuarioActual) ? date('d/m/Y H:i:s',$usuarioActual->getFechaHoraUltimaConexion()) : null),
+        'delete'=> 'Delete account',
         
+        //Titulos
         
-        'details' => 'Detalle',
-        'editProfile' => 'Edit Profile',
+        'loginT' => 'App Logging Logout',
+        'startT'=> 'Start',
+        'signupT'=> 'Registration',
+        'editProfileT' => 'Edit Profile',
+        'deleteT'=> 'Delete Account',
         
+        //Muestra INICIO
+        'welcome' => 'Welcome ' . (isset($usuarioActual) ? $usuarioActual->getDescUsuario() : null),
+        'numConnections' => 'You have connected ' . (isset($usuarioActual) ? $usuarioActual->getNumConexiones() : null) . ' times',
+        'numConnectionsWelcome' => 'This is the first time you connect',
+        'lastConnection' => 'Last connection: ' . (isset($usuarioActual) ? date('d/m/Y H:i:s', $usuarioActual->getFechaHoraUltimaConexion()) : null),
         
-        'saveB' => 'Save',
-        'returnB' => 'Return'
-         
+        //Botones movimiento
+        'acceptB'=>'Accept',
+        'cancelB' => 'Cancel'
     ]
 ];
 ?>

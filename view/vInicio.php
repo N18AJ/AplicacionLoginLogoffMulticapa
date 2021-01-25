@@ -1,19 +1,17 @@
-<header>
-    <h1 class="inicioSesion">Inicio</h1>
-    <div class="buttons-header-inicio">
-
-        <form name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-            <button class="logout" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
-            <button class="logout" type="submit" name='editarPerfil'><?php echo $aLang[$_COOKIE['idioma']]['editProfile']; ?></button>
-        </form>
-    </div>
-
+<header class="titulo">
+    <h1><?php echo $aLang[$_COOKIE['idioma']]['startT']; ?></h1> <!-- peticion del titulo-->
 </header>
-<main class="main-container-inicio" class="flex-container-align-item-center">
+<main class="enter">
     <article>
         <h2 class="bienvenida"><?php echo $aLang[$_COOKIE['idioma']]['welcome'] ?> </h2>
-        <p><?php echo ($numConexiones > 1) ? $aLang[$_COOKIE['idioma']]['numConnections'] : $aLang[$_COOKIE['idioma']]['numConnectionsWelcome']; ?></p>
-        <?php echo ($ultimaConexion != null) ? "<p>" . $aLang[$_COOKIE['idioma']]['lastConnection'] . "</p>" : null; ?>
+        <p><?php echo ($ConexNumber >= 1) ? $aLang[$_COOKIE['idioma']]['numConnections'] : $aLang[$_COOKIE['idioma']]['numConnectionsWelcome']; ?></p>
+        <?php echo ($LastDateConex != null) ? "<p>" . $aLang[$_COOKIE['idioma']]['lastConnection'] . "</p>" : null; ?>
     </article>
+    <br>
+    <form name="logout" class="botones" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <button class="button" type="submit" name='cerrarSesion'><?php echo $aLang[$_COOKIE['idioma']]['logoff']; ?></button>
+        <button class="button" type="submit" name='editProfile'><?php echo $aLang[$_COOKIE['idioma']]['edit']; ?></button>
+        <button class="button" type="submit" name='deleteAccount'><?php echo $aLang[$_COOKIE['idioma']]['delete']; ?></button>
+    </form>
 </main>
 </body>

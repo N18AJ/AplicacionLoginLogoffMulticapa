@@ -1,16 +1,17 @@
 /* 
-    Autor.- Javier Nieto 
-    Fecha de modificacion.- 2020/09/29
+    Autor.- Nerea Álvarez Justel 
+    Fecha de modificacion.- 2021/01/24
 */
-
-@import url("https://fonts.googleapis.com/css?family=Caveat&display=swap");
+/* -------- TIPOS -------- */
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
 @font-face {
-    font-family: "Cavea";
+    font-family: "Special Elite";
 }
 @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
 @font-face {
     font-family: "Coda Caption";
 }
+
 * {
     box-sizing: border-box;
 }
@@ -29,20 +30,24 @@ body {
 
 /* -------- HEADER -------- */
 
-header {
+#header {
     display: flex;
-    align-items: center;
-    border-radius: 10px;
-    height: 55px;
-    font-family: "Coda Caption", cursive;
-    border-bottom: 2px solid black;
-    padding-bottom: 5px;
+    justify-content: space-around;
+}
+        /*ICONOS*/             
+.icono_logo:hover{
+    filter: drop-shadow(2px 2px 2px #6D6D6D);
 }
 
-header > h1 {
-    margin: auto 10px;
-    text-align: center;
-    font-size: 45px;
+.titulo  {
+   font-family: 'Special Elite', cursive;
+    margin: auto;
+    font-size: 16pt;
+    text-align: left;
+    border-bottom: 4px solid black;
+}
+.titulo  h1{
+    margin-left: 25px;
 }
 
 .github>img{
@@ -54,7 +59,15 @@ header > h1 {
 main {
     min-height: calc(100vh - 140px);
     margin: 20px; 
-   font-family: 'Caveat', cursive;
+   font-family: "Coda Caption", cursive;
+}
+
+label{
+    font-size: 14pt;
+}
+
+.enter{
+    text-align: center;
 }
 /* -------- FOOTER -------- */
 
@@ -84,63 +97,40 @@ footer a{
     justify-content: space-around;
 }
 
-.required{
-    background-color: #F4F4F4;
-}
-
-form[name="login"],form[name="singup"],form[name="editarPerfil"]{
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    padding: 40px;
-    border-radius: 50px;
-}
-form[name="login"],form[name="singup"],form[name="editarPerfil"]{
-    min-width:200px;
-}
-form[name="login"] *,form[name="singup"] *,form[name="editarPerfil"] *{
-    font-size:1.5rem;
-}
-
-form[name="login"] div *,form[name="singup"] div *,form[name="editarPerfil"] div *{
-    display: block;
-    margin:5px;
-    text-align: center
-}
-
-input[name="IniciarSesion"]{
-    margin-left:auto;
-}
-
+/* -------- Formato de input -------- */
 form[name="login"] input,form[name="singup"] input,form[name="editarPerfil"] input{
     width:160px;
     border: none;
-    border-bottom: 3px solid #616161;
+    border-bottom: 3px solid black;
     border-radius: 5px;
     margin: auto;
+    text-align: center;
 }
 
 form[name="login"] span, form[name="singup"] span, form[name="editarPerfil"] span{
     font-size: 1rem; 
 }
 
-input[readonly=""]{
+input[write=""]{
     background: none;
+    width:160px;
+    border: none;
+    border-bottom: 3px solid black;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
 }
 
-.logout{
-    font-size: 1.2rem;
-    border-radius: 7px;
-    color: #616161;
-    font-weight: bold;
-    border: 4px solid white;
-    margin-right: 6px;
-   font-family: "Coda Caption", cursive;
+input[readonly=""]{
+    background: none;
+    width:160px;
+    border: none;
+    border-bottom: 3px solid #616161;
+    border-radius: 5px;
+    margin: auto;
+    text-align: center;
 }
-.logout:hover{
-    background-color: #616161;
-    color: #ffffff;
-}
+
 
 .fixed{
     position: fixed;
@@ -148,10 +138,9 @@ input[readonly=""]{
 }
 
 .idioma{
-    font-size: 1.3rem;
     border: none;
     background: none;
-    color: blue;
+    color: white;
 } 
 
 form[name="formularioIdioma"]{
@@ -164,42 +153,17 @@ form[name="formularioIdioma"]{
     width: 50px;
 }
 
-#borrarUsuario{
-    background-color: #fd849b;
-    border-radius: 20px;
-    border: 2px solid #f24646;
-}
-
-
-.main-container-inicio{
-    font-size: 2rem;
+/* -------- BOTONES -------- */
+ .button{
+    margin:20px;
     text-align: center;
-}
-.buttons-header-inicio {
-    width: 500px;
-    height: 50px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.buttons-header-inicio *{
-    margin: 6px 5px auto 5px;
-}
-
-.buttons-header-inicio #fotoPerfil{
-    margin: 0 !important;
-}
-
-.button{
-    font-size: 1.2rem;
-    border-radius: 7px;
-    color: #616161;
-    font-weight: bold;
-    border: 4px solid white;
-    margin-right: 6px;
-    font-family: "Coda Caption", cursive;
+    color: black; 
+    width: 120px; 
+    height: 40px; 
+    font-size: 10pt;
+    border-radius: 10px;
+    border: 2px solid black;
 }
 .button:hover{
-    background-color: #616161;
-    color: #ffffff;
+    border: 4px solid black;
 }

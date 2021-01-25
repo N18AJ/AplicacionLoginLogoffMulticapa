@@ -1,26 +1,27 @@
 <?php
+
 /**
  * Class DBPDO
  *
- * Clase cuyo metodo permite establecer una conexion con la base de datos 
+ * Clase cuyo método permite establecer una conexión con la base de datos y realizarle consultas.
  * 
  * @author Nerea Álvarez Justel
- * @since 1.0
- * @copyright 21-01-2021
+ * @since Version 1.0
+ * @copyright 24-01-2021
  * @version 1.0
  */
-
 class DBPDO {
 
-/**
- * Metodo ejecutarConsulta()
- * 
- * Metodo que nos permite ejecutar una consulta sql a la base de datos
- * 
- * @param string $sentenciaSQL sentencia sql que queremos ejecutar
- * @param array $parametros parametros que necesita la consulta
- * @return null|PDOStatement resultado que devolverá la consulta
- */
+    /**
+     * Método ejecutaConsulta()
+     * 
+     * Ejecuta una consulta a la base de datos indicada en configDB.
+     * 
+     * @access public
+     * @param $sentenciaSQL Código SQL 
+     * @param $parametros Datos necesarios para realizar la consulta e insertado en el código SQL.
+     * @return consulta La suma de todos los argumentos
+     */
     public static function ejecutaConsulta($sentenciaSQL, $parametros) {
         try {
             $miDB = new PDO(DNS, USER, PASSWORD);
@@ -34,4 +35,5 @@ class DBPDO {
         }
         return $consulta;
     }
+
 }
